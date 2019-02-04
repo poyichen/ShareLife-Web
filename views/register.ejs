@@ -1,0 +1,38 @@
+<% include ./partials/header %>
+
+
+<div class= container>
+    <h1 class="mt-5 text-center">Sign Up</h1>
+    <div style="width:30%; margin: 25px auto;">
+        <form action = "/register" method = "post">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user fa-lg"></i></span>
+                </div>
+                <input class="form-control" type = "text" name = "username" placeholder = "Username">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock fa-lg"></i></span>
+                </div>
+                <input class="form-control" type = "password" name = "password" placeholder="Password">
+            </div>
+            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-key fa-lg"></i></i></span>
+                </div>
+                <input class="form-control" type = "text" name = "adminCode" placeholder="Admin Code">
+            </div>                
+            
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Sign Up</button>
+            </div>
+            
+        </form>
+        <a class="btn btn-success" href="/photos"><i class="fas fa-undo fa-lg mr-2"></i>Go Back</a>
+    </div>
+</div>
+
+<% include ./partials/footer %>

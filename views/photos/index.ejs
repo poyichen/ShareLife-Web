@@ -1,0 +1,44 @@
+<% include ../partials/header %>
+
+    <header class = "jumbotron">
+         <div class="container-fluid">
+            <h1>Welcome To ShareLife Community</h1>
+            <p>Share your life immediately!</p>
+            <p>
+                <a class="btn btn-primary" href="/photos/new">Add A New Photo</a>
+            </p>
+            <p>
+                <form action="/photos" method="GET" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" name="search" placeholder="Photos search..." class="form-control">
+                        <input type="submit" value="Search" class="btn btn-success">
+                    </div>
+                </form>
+            </p>
+        </div>
+    </header>
+        
+     <div class="container-fluid">   
+        <div class="row text-center">
+            <div class="col-md-12">
+                <% if(noMatch !== null) { %>
+                    <h3 <i class="far fa-surprise "></i> <strong>Woops</strong> </h3>
+                    <h3><%= noMatch %></h3>
+                <% } %>
+            </div>
+            
+            <% photos.forEach(function(photo){ %>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="<%=photo.image%>" class="card-img-top" alt="<%=photo.title%>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=photo.title%></h5>
+                        <a href="/photos/<%= photo._id%>" class="btn btn-primary">More Info</a>
+                    </div>
+                </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+<% include ../partials/footer %>
