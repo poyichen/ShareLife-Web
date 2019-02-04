@@ -11,7 +11,8 @@ var express    = require("express"),
     User       = require("./models/user"),
     seedDB     = require("./seeds")
 
-mongoose.connect('mongodb://localhost:27017/my_photos', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost:27017/my_photos', { useNewUrlParser: true });
+mongoose.connect('mongodb://poyichen:z85208520@ds221405.mlab.com:21405/sharelife', { useNewUrlParser: true });
 app.locals.moment = require("moment");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
